@@ -20,6 +20,7 @@
  * OTHER DEALINGS IN THE SOFTWARE.
  */
 
+#ifndef __ANDROID__
 #include <sys/ioctl.h>
 #include <dlfcn.h>
 #include <fcntl.h>
@@ -154,3 +155,9 @@ int main(int argc, char *argv[])
 
 	return failed;
 }
+#else
+int main(int argc, char *argv[])
+{
+       return 0;
+}
+#endif
